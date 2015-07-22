@@ -13,7 +13,7 @@ sudo openssl rsa -in server.key -out server.key.insecure
 sudo mv server.key server.key.secure
 sudo mv server.key.insecure server.key
 # Create a Certificate Signing Request (CSR)
-sudo openssl req -new -key server.key -out server.csr
+sudo openssl req -new -sha256 -key server.key -out server.csr
 # Use the CSR above to submit to a CA or proceed to self signing below
 sudo openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 Country [US]
