@@ -46,7 +46,7 @@ SSLCertificateFile /etc/ssl/server.crt
 SSLCertificateKeyFile /etc/ssl/server.key
 ```
 ##Enable the virtual host file
-sudo a2ensite virtual-host
+`sudo a2ensite virtual-host`
 ## (Optional) Add the following to your .htaccess file to rewrite traffic to http to https
 ```apache2
 RewriteEngine On
