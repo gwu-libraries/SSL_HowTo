@@ -44,9 +44,9 @@ SSLHonorCipherOrder On
 SSLCipherSuite ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS
 SSLCertificateFile /etc/ssl/server.crt
 SSLCertificateKeyFile /etc/ssl/server.key
-#Enable the virtual host file
-sudo a2ensite virtual-host
 ```
+##Enable the virtual host file
+sudo a2ensite virtual-host
 ## (Optional) Add the following to your .htaccess file to rewrite traffic to http to https
 ```apache2
 RewriteEngine On
