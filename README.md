@@ -36,7 +36,7 @@ sudo cp server.key /etc/ssl/private
 <VirtualHost *:443>
 ServerName example.com:443
 ```
-## Add the following three lines to your virtual host file
+## Add the following lines to your virtual host file
 ```apache2
 SSLEngine on
 SSLProtocol ALL -SSLv2 -SSLv3
