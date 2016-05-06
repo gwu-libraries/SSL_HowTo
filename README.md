@@ -15,15 +15,19 @@ sudo mv server.key.insecure server.key
 ```
 ## Create a Certificate Signing Request (CSR)
 `sudo openssl req -new -sha256 -key server.key -out server.csr`
-## Use the CSR above to submit to a CA or proceed to self signing below
+You'll be prompted to answer some questions:
+*Country [US]
+*State/Province [District of Columbia]
+*Locality [Washington]
+*Organization [GWU Libraries]
+*Organizational Unit [Scholarly Technology Group]
+*Common Name [DNS Name]
+*Email Address [gwlib-root@groups.gwu.edu]
+## Get a signature for your certificate.
+If you're getting a proper certificate, send the csr file to an authrority and they will send back a certificate. at GWU, email it to ithelp@gwu.edu.
+### Self Signing
+If you're working in development and would prefer to sign the certificate yourself, do the following
 `sudo openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt`
--Country [US]
--State/Province [District of Columbia]
--Locality [Washington]
--Organization [GWU Libraries]
--Organizational Unit [Scholarly Technology Group]
--Common Name [DNS Name]
--Email Address [gwlib-root@groups.gwu.edu]
 ## Install SSL certs
 ```bash
 sudo cp server.crt /etc/ssl/certs
