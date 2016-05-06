@@ -44,15 +44,15 @@ sudo cp server.key /etc/ssl/private
 ```apache2
 <VirtualHost *:443>
 ServerName example.com:443
-```
-## Add the following lines to your virtual host file
-```apache2
+...
 SSLEngine on
 SSLProtocol ALL -SSLv2 -SSLv3
 SSLHonorCipherOrder On
 SSLCipherSuite ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS
 SSLCertificateFile /etc/ssl/server.crt
 SSLCertificateKeyFile /etc/ssl/server.key
+...
+</VirtualHost>
 ```
 ##Enable the virtual host file
 `sudo a2ensite virtual-host`
