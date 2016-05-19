@@ -15,6 +15,7 @@ sudo mv server.key.insecure server.key
 ```
 ## Create a Certificate Signing Request (CSR)
 `sudo openssl req -new -sha256 -key server.key -out server.csr`
+
 You'll be prompted to answer some questions:
 ```
 Country [US]
