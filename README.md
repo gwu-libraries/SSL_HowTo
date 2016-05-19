@@ -50,8 +50,8 @@ SSLEngine on
 SSLProtocol ALL -SSLv2 -SSLv3
 SSLHonorCipherOrder On
 SSLCipherSuite ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS
-SSLCertificateFile /etc/ssl/server.crt
-SSLCertificateKeyFile /etc/ssl/server.key
+SSLCertificateFile /etc/ssl/certs/server.crt
+SSLCertificateKeyFile /etc/ssl/private/server.key
 ...
 </VirtualHost>
 ```
