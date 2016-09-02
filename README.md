@@ -66,3 +66,6 @@ RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URL} [R=301,L]
 ## Restart Apache2
 `sudo service apache2 restart`
 ## Test and verify your conf
+
+## InCommon Intermediary
+If you're using a certificate signed by in-common, download their intermediary bundle and include it in your chain. The bundle is available at `http://www.incommon.org/certificates/repository/sha384%20Intermediate%20cert.txt`. Rename this certificate and move it to `/etc/ssl/intermediate/incommon-ssl.ca-bundle`. Then add the following directive after you certificate and key files: `/etc/ssl/intermediate/incommon-ssl.ca-bundle`.
