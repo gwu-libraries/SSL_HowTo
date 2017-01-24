@@ -40,7 +40,8 @@ sudo cp server.crt /etc/ssl/certs
 sudo cp server.key /etc/ssl/private
 ```
 ## Configure Virtual Host
-`sudo cp /etc/apache2/sites-available/default-ssl /etc/apache2/sites-available/host-ssl` (where 'host' is domain name i.e. library.gwu.edu-ssl)
+`sudo cp /etc/apache2/sites-available/default-ssl /etc/apache2/sites-available/host-ssl` 
+(where 'host' is domain name i.e. library.gwu.edu-ssl)
 ## Configure the following in your virtual host file
 ```apache2
 <VirtualHost *:443>
@@ -56,7 +57,8 @@ SSLCertificateKeyFile /etc/ssl/private/server.key
 </VirtualHost>
 ```
 ##Enable the virtual host file
-`sudo a2ensite host-ssl` (as named earlier when you copied the default-ssl file, i.e. library.gwu.edu-ssl)
+`sudo a2ensite host-ssl` 
+(as named earlier when you copied the default-ssl file, i.e. library.gwu.edu-ssl)
 ## (Optional) Add the following to your .htaccess file to rewrite traffic to http to https
 ```apache2
 RewriteEngine On
