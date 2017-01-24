@@ -40,7 +40,7 @@ sudo cp server.crt /etc/ssl/certs
 sudo cp server.key /etc/ssl/private
 ```
 ## Configure Virtual Host
-`sudo cp /etc/apache2/sites-available/default-ssl /etc/apache2/sites-available/host-ssl`
+`sudo cp /etc/apache2/sites-available/default-ssl /etc/apache2/sites-available/host-ssl` (where 'host' is domain name i.e. library.gwu.edu-ssl)
 ## Configure the following in your virtual host file
 ```apache2
 <VirtualHost *:443>
@@ -56,7 +56,7 @@ SSLCertificateKeyFile /etc/ssl/private/server.key
 </VirtualHost>
 ```
 ##Enable the virtual host file
-`sudo a2ensite virtual-host`
+`sudo a2ensite host-ssl` (as named earlier when you copied the default-ssl file, i.e. library.gwu.edu-ssl)
 ## (Optional) Add the following to your .htaccess file to rewrite traffic to http to https
 ```apache2
 RewriteEngine On
@@ -68,4 +68,4 @@ RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URL} [R=301,L]
 ## Test and verify your conf
 
 ## InCommon Intermediary
-If you're using a certificate signed by in-common, download their intermediary bundle and include it in your chain. The bundle is available at `http://www.incommon.org/certificates/repository/sha384%20Intermediate%20cert.txt`. Rename this certificate and move it to `/etc/ssl/intermediate/incommon-ssl.ca-bundle`. Then add the following directive after you certificate and key files: `/etc/ssl/intermediate/incommon-ssl.ca-bundle`.
+If you're using a certificate signed by in-common, download their intermediary bundle and include it in your chain. The bundle is available at `http://www.incommon.org/certificates/repository/sha384%20Intermediate%20cert.txt`. Rename this certificate and move it to `/etc/ssl/intermediate/incommon-ssl.ca-bundle`. Then add the following directive after the certificate and key files: `/etc/ssl/intermediate/incommon-ssl.ca-bundle`.
