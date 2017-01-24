@@ -28,7 +28,7 @@ Email Address [gwlib-root@groups.gwu.edu]
 ```
 Leave the challange section blank in most cases.
 ## Get a signature for your certificate.
-If you're getting a proper certificate, send the csr file to an authrority and they will send back a certificate. at GWU, email it to ithelp@gwu.edu.
+If you're getting a proper certificate, send the csr file to a Certificate Authority (CA) and they will send back a certificate. At GWU, email it to ithelp@gwu.edu.
 ### Self Signing
 If you're working in development and would prefer to sign the certificate yourself, do the following
 ```bash
@@ -68,6 +68,11 @@ RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URL} [R=301,L]
 ## Restart Apache2
 `sudo service apache2 restart`
 ## Test and verify your conf
+
+## GWU Intermediary
+To work across all browser/os combinations (I'm looking at you Chrome/Android) install an intermediary certificate. For sites with a cert from GW:
+Download the intermediary cert provided by GWU (usually in the same email as the root certificate: the download option labelled "X509 Intermediates/root only, Base64 encoded").
+Then add the following directive after the certificate and key files: `SSLCertificateChainFile /etc/ssl/intermediate/library_gwu_edu_interm.cer`.
 
 ## InCommon Intermediary
 If you're using a certificate signed by in-common, download their intermediary bundle and include it in your chain. The bundle is available at `http://www.incommon.org/certificates/repository/sha384%20Intermediate%20cert.txt`. Rename this certificate and move it to `/etc/ssl/intermediate/incommon-ssl.ca-bundle`. Then add the following directive after the certificate and key files: `/etc/ssl/intermediate/incommon-ssl.ca-bundle`.
