@@ -28,7 +28,7 @@ Email Address [gwlib-root@groups.gwu.edu]
 ```
 Leave the challange section blank in most cases.
 ## Get a signature for your certificate.
-If you're getting a proper certificate, send the csr file to a Certificate Authority (CA) and they will send back a certificate. At GWU, email it to ithelp@gwu.edu a request an InCommon signed certificate.
+If you're getting a proper certificate, send the csr file to a Certificate Authority (CA) and they will send back a certificate. At GWU, email it to ithelp@gwu.edu and request an InCommon signed certificate.
 ### Self Signing
 If you're working in development and would prefer to sign the certificate yourself, do the following
 ```bash
